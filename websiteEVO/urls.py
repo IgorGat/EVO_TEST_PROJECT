@@ -20,8 +20,9 @@ Including another URLconf
 #    path('admin/', admin.site.urls),
 #]
 from django.contrib import admin
-from django.conf.urls import url
+from django.conf.urls import url, include
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'', include('records.urls')),
 ]
