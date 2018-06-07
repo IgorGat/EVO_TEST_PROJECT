@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ВВод нового текста</title>
+</head>
+<body>
+
+    <p><b>Форма ввода новой заметки</b><br>
+    <form method="POST" action="/add_new_text">{% csrf_token %}
+        {{form.clear}}  {{form.as_p}}
+        <input type="submit" value="Сохранить" name="save">
+        <input type="submit" value="Сохранить и показать список заметок" name="save_show">
+   </form>
+   <br>
+   <form method="GET" action="/list_of_notes">{% csrf_token %}
+        <input type="submit" value="Показать весь список заметок" name="list">
+   </form>
+
+</body>
+</html>
